@@ -1,5 +1,7 @@
 package org.shvetsov;
 
+import org.shvetsov.avia.*;
+
 import java.time.LocalDate;
 import java.util.Collection;
 import java.util.Collections;
@@ -31,7 +33,18 @@ public class Main {
             System.out.println(human.getGender());
         }
         System.out.println(filteredHumans.stream().count());*/ // tests
+        List<Aircraft> aircrafts = List.of(
+                new PassengerPlane("73089", 215, 2100),
+                new CargoPlane("76501", 60, 2300),
+                new PassengerHelicopter("68345", 12, 16.4),
+                new CargoHelicopter("68921", 5.5, 14.8)
+        );
 
+        for (Aircraft aircraft : aircrafts) {
+            System.out.println(aircraft.getAircraftType());
+            System.out.println(aircraft.getDetails());
+            System.out.println(aircraft.getDetails());
+        }
 
     }
 
