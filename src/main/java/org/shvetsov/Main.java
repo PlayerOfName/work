@@ -2,10 +2,10 @@ package org.shvetsov;
 
 import org.shvetsov.avia.*;
 
-import java.time.LocalDate;
+import java.io.PrintStream;
+import java.io.UnsupportedEncodingException;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.Date;
 import java.util.List;
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -13,7 +13,9 @@ import java.util.stream.Collectors;
 public class Main {
     private static final HumanService humanService = new HumanService();
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws UnsupportedEncodingException {
+        System.setOut(new PrintStream(System.out, true, "UTF-8"));
+
 /*        Collection<Human> humans = List.of(
                 new Human("Иван", LocalDate.of(1990, 5, 15), Human.Gender.MALE),
                 new Human("Игорь", LocalDate.of(1975, 5, 15), Human.Gender.MALE),
@@ -39,13 +41,9 @@ public class Main {
                 new PassengerHelicopter("68345", 12, 16.4),
                 new CargoHelicopter("68921", 5.5, 14.8)
         );
-
         for (Aircraft aircraft : aircrafts) {
-            System.out.println(aircraft.getAircraftType());
-            System.out.println(aircraft.getDetails());
-            System.out.println(aircraft.getDetails());
+            System.out.println(aircraft.toString());
         }
-
     }
 
     //Из String в Integer 1
